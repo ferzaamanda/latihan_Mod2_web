@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operasi Penjumlahan</title>
+</head>
+<body>
+    <h1>Penjumlahan Bilangan</h1>
+    
+    <label for="bilangan1">Bilangan Pertama:</label>
+    <input type="text" id="bilangan1"><br><br>
+    
+    <label for="bilangan2">Bilangan Kedua:</label>
+    <input type="text" id="bilangan2"><br><br>
+    
+    <button onclick="jumlahkan()">Jumlahkan</button><br><br>
+    <button onclick="ulang()">Ulang</button><br><br>
+    
+    <p>Hasil:</p>
+    <p id="hasil"></p>
+    
+    <script>
+        function jumlahkan() {
+            // Mengambil nilai input dari bilangan1 dan bilangan2
+            var bilangan1 = parseFloat(document.getElementById("bilangan1").value);
+            var bilangan2 = parseFloat(document.getElementById("bilangan2").value);
+            
+            // Memeriksa apakah kedua input tidak kosong
+            if (isNaN(bilangan1) || isNaN(bilangan2)) {
+                alert("Masukkan kedua bilangan terlebih dahulu.");
+                return; // Hentikan eksekusi jika ada input kosong
+            }
+
+            // Melakukan operasi penjumlahan
+            var hasil = bilangan1 + bilangan2;
+            
+            // Menampilkan hasil pada elemen dengan id "hasil"
+            document.getElementById("hasil").innerHTML = "Hasil penjumlahan: " + hasil;
+        }
+    </script>
+</body>
+</html>
